@@ -15,10 +15,14 @@ public class MainActivity extends AppCompatActivity {
             public void view() {
                 xml(R.layout.activity_main, ()-> {
                     withId(R.id.text, ()->{
-                        text("Hai");
+                        text(getState().messages().get(0));
                     });
                 });
             }
         });
+    }
+
+    private State getState() {
+        return ((ILuvBotApp) getApplication()).getState();
     }
 }

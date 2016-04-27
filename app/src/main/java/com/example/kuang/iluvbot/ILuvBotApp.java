@@ -12,18 +12,22 @@ import trikita.jedux.Store;
  */
 public class ILuvBotApp extends Application {
 
-    private Store<Action, State> store;
+    private Store<Action<Actions, ?>, State> store;
 
     @Override
     public void onCreate() {
         super.onCreate();
         this.store = new Store<>(new MessageReducer(),
-                ImmutableState.builder().addMessages("woi").build());
+                ImmutableState.builder().build());
 
         this.store.subscribe(Anvil::render);
     }
 
     public State getState() {
         return store.getState();
+    }
+
+    public Store<Action<Actions, ?>, State> getStore() {
+        return store;
     }
 }

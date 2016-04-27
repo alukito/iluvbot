@@ -3,7 +3,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.0.0'
+        classpath 'com.android.tools.build:gradle:2.1.0-beta3'
         classpath 'me.tatarka:gradle-retrolambda:3.2.5'
         classpath 'com.neenbedankt.gradle.plugins:android-apt:1.6'
     }
@@ -44,9 +44,11 @@ repositories {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.android.support:appcompat-v7:23.2.1'
+    compile 'com.android.support:recyclerview-v7:23.2.1'
     compile 'com.github.trikita:jedux:-SNAPSHOT'
     compile 'co.trikita:anvil-sdk19:0.3.2'
+    compile 'com.github.trikita:anvil-recyclerview:1.2'
     apt 'org.immutables:value:2.1.16'
     provided 'org.immutables:value:2.1.16'
 }
